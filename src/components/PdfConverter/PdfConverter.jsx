@@ -1,13 +1,28 @@
 import { jsPDF } from 'jspdf';
+
 function PdfConverter() {
   const convertPDFHandler = () => {
     // Default export is a4 paper, portrait, using millimeters for units
-    const document = new jsPDF(); // variable এর নাম যে document ই দিতে হবে এর কোনো বাধ্যবাধকতা নাই. তোমার ইচ্ছামত নাম দিতে পারো
-    console.log('document = ', document);
+    const document = new jsPDF({
+      orientation: 'p',
+      unit: 'mm',
+    });
+    // p = portrait
+    // mm = millimeters
 
-    document.text('Hello world!', 10, 10);
-    // "Hello world!" হচ্ছে পিডিএফ এর জন্য একটি value, 10 দ্বারা বোঝানো হচ্ছে "Hello world!" text এর অবস্থান হবে  x -axis (x-coordinate) থেকে 10 millimeters দূরে,
-    // পরের 10 দ্বারা বোঝানো হচ্ছে y-axis (y-coordinate) থেকে 10 millimeters দূরে "Hello world!" text এর অবস্থান হবে
+    // pageWidth এর আমরা দুই ভাবে নিতে পারি
+    const pageWidth = document.internal.pageSize.width;
+    const pageWidth2 = document.internal.pageSize.getWidth();
+
+    console.log('page width =', pageWidth);
+    console.log('page width2 =', pageWidth2);
+
+    const title = 'Hello world!';
+    const titleWidth = document.getTextDimensions(title).w;
+    console.log('title =', titleWidth);
+
+    const x = (pageWidth - titleWidth) / 2;
+    document.text(title, x, 14);
 
     document.save('name.pdf'); // name of pdf
   };

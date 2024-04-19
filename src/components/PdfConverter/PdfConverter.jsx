@@ -6,11 +6,81 @@ function PdfConverter() {
     const document = new jsPDF({
       orientation: 'p',
       unit: 'mm',
+      format: 'a4',
     });
 
     autoTable(document, {
       head: [['Name', 'Email', 'Country']],
       body: [
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+
         ['David', 'david@example.com', 'Sweden'],
         ['Castille', 'castille@example.com', 'Spain'],
       ],

@@ -1,28 +1,20 @@
 import { jsPDF } from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
 function PdfConverter() {
   const convertPDFHandler = () => {
-    // Default export is a4 paper, portrait, using millimeters for units
     const document = new jsPDF({
       orientation: 'p',
       unit: 'mm',
     });
-    // p = portrait
-    // mm = millimeters
 
-    // pageWidth এর আমরা দুই ভাবে নিতে পারি
-    const pageWidth = document.internal.pageSize.width;
-    const pageWidth2 = document.internal.pageSize.getWidth();
-
-    console.log('page width =', pageWidth);
-    console.log('page width2 =', pageWidth2);
-
-    const title = 'Hello world!';
-    const titleWidth = document.getTextDimensions(title).w;
-    console.log('title =', titleWidth);
-
-    const x = (pageWidth - titleWidth) / 2;
-    document.text(title, x, 14);
+    autoTable(document, {
+      head: [['Name', 'Email', 'Country']],
+      body: [
+        ['David', 'david@example.com', 'Sweden'],
+        ['Castille', 'castille@example.com', 'Spain'],
+      ],
+    });
 
     document.save('name.pdf'); // name of pdf
   };

@@ -9,6 +9,14 @@ function PdfConverter() {
       format: 'a4',
     });
 
+    const addPageNumber = () => {
+      for (let i = 1; i <= document.internal.getNumberOfPages(); i++) {
+        console.log('i = ', i);
+        document.setPage(i);
+        document.text(`Page ${i}`, 14, document.internal.pageSize.height - 10);
+      }
+    };
+
     autoTable(document, {
       head: [['Name', 'Email', 'Country']],
       body: [
@@ -85,6 +93,8 @@ function PdfConverter() {
         ['Castille', 'castille@example.com', 'Spain'],
       ],
     });
+
+    addPageNumber();
 
     document.save('name.pdf'); // name of pdf
   };

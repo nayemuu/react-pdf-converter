@@ -27,11 +27,10 @@ function PdfConverter() {
             content: 'Total',
             styles: {
               fontStyle: 'bold',
+              halign: 'center',
             },
+            colSpan: 3,
           },
-
-          '',
-          '',
           15,
         ], // যে field কে empty রাখতে চাই, সেই field এ empty string pass করতে হবে.
       ],

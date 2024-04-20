@@ -22,7 +22,18 @@ function PdfConverter() {
         [1, 'MUNCHYS LEXUS', 1, 490],
         [2, 'DAN CAKE', 1, 120],
         [6, 'Pran Potata Spicy Biscuit', 1, 15],
-        ['Total', '', '', 15], // যে field কে empty রাখতে চাই, সেই field এ empty string pass করতে হবে.
+        [
+          {
+            content: 'Total',
+            styles: {
+              fontStyle: 'bold',
+            },
+          },
+
+          '',
+          '',
+          15,
+        ], // যে field কে empty রাখতে চাই, সেই field এ empty string pass করতে হবে.
       ],
 
       theme: 'plain', //default value was striped
